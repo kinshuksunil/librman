@@ -10,7 +10,23 @@ LibrMan (Library Manager) will manage your music library:
 
 Initial release as a standalone utility. Future releases as plugins for popular music players.
 
-= Dependency =
+== Dependency ==
 
   * Python 2.6 - http://python.org
   * Mutagen - http://code.google.com/p/mutagen/
+
+== Usage ==
+
+{{{ > librman manage <source> <destination> <parameters> }}}
+
+The _manage_ command helps with creating a new file system organisation of MP3's in a source folder to the specified path inside the the destination folder.
+
+Where:
+  * <source> folders with mp3 files to be managed
+  * <destination> folder where the library will be managed
+  * <parameters> application parameters
+    # --nd = No Duplicates, will remove duplicate file names of type x-1.mp3, x_1.mp3, x(1).mp3, where original file is x.mp3
+    # --path:%ar|%al|%gr|%lg where %ar = artist, %al = album, %gr = genre, %lg = language. eg: --path:%ar/%al would organise the mp3 files in the path destination/artist/album
+
+
+{{{ > librman update <lib-path>
