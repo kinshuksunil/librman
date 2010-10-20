@@ -1,4 +1,4 @@
-#summary Project Idea+Roadmap
+#summary Project Idea + Roadmap
 #labels Phase-Requirements,Featured
 
 = Introduction =
@@ -10,3 +10,8 @@ LibrMan (Library Manager) will manage your music library:
 # constantly monitor your physical music library for file system changes and accordingly update your ID3 information
 
 Initial release as a standalone utility. Future releases as plugins for popular music players.
+
+= Dependency =
+
+* Python 2.6 - http://python.org
+* Mutagen - http://code.google.com/p/mutagen/
