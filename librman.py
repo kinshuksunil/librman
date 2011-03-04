@@ -1,11 +1,18 @@
+#! /usr/bin/python
 
-import eyeD3
-import os
-import fnmatch
+# File: librman.py
+# Purpose: Main script for the Librman Project. The Librman project helps you physically manage your mp3 library.
+# Author: Mayank Saini, Kinshuk Sunil
+# License: All code licensed and released under GNU GPL 3. Read more details at http://www.gnu.org/licenses/gpl.html
+
+import eyeD3			# explain import library - one line summary
+import os			# explain import library - one line summary
+import fnmatch			# explain import library - one line summary
 #from sqlite3 import *
-import tempfile
-import shutil
-import sys
+import tempfile			# explain import library - one line summary
+import shutil			# explain import library - one line summary
+import sys			# explain import library - one line summary
+
 
 #conn = connect('IDE.db')
 #curs = conn.cursor()
@@ -14,6 +21,11 @@ import sys
 #"create table if not exists songs(id integer primary key autoincrement,title varchar(30),artist varchar(30),album varchar(30),year varchar(4),comment varchar(30),genre varchar(30),filepath varchar(100))"
 #)
 
+#***************************************************************
+# Function: CreateDir
+# Purpose:
+# Author: Mayank Saini
+
 def createDir(dirName,dirPath=''):
     dir = dirPath+dirName
     if not os.path.exists(dir):
@@ -21,6 +33,7 @@ def createDir(dirName,dirPath=''):
         return 1
     else:
         return 0
+#***************************************************************
         
 musicPath = ""
 #musicPath = input('Enter path of music Folder: ')
@@ -29,10 +42,6 @@ def locate(pattern, root=os.curdir):
     for path, dirs, files in os.walk(os.path.abspath(root)):
         for filename in fnmatch.filter(files,pattern):
             yield os.path.join(path,filename)
-
-
-
-
 
 def createDirStructure():
     for musicFiles in locate("*.mp3",musicPath):
